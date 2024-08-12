@@ -10,3 +10,15 @@ export const GET_LOAN_PRODUCTS = gql`
     }
   }
 `;
+
+export const GET_LOAN_APPLICATIONS = gql`
+  query GetLoanApplications {
+    loanApplications {
+      id
+      fullName
+      email
+      loanAmount
+      loanPurpose
+    }
+  }
+`;
