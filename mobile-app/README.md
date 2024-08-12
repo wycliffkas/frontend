@@ -1,50 +1,61 @@
-# Welcome to your Expo app 👋
+# Numida Application
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Numida App is a React Native Expo application that allows users to view loan projects, add loans, and view loan applications.
 
-## Get started
+## Features
 
-1. Install dependencies
+1. **Data Fetching with GraphQL**:
+   - Fetch a list of loan products using a GraphQL query.
+   - Display the loan products in a user-friendly format shown in the attached Figma design.
+
+2. **Form Submission with REST API**:
+   - Implement a form that allows users to apply for a loan.
+   - Submit the form data to a REST API endpoint.
+
+3. **Application Structure**:
+   - Use React Native for building the application.
+   - Use any styling approach (e.g., Styled Components, React Native's StyleSheet).
+   - State management can be handled using React Native's built-in hooks or any state management library of your choice.
+
+## Screenshots
+
+[Watch the demo video on Vimeo](https://player.vimeo.com/video/997590553?h=67fd1cb7f9)
+
+## Installation
+
+1. **Clone the repository**:
 
    ```bash
-   npm install
+   https://github.com/wycliffkas/frontend.git
    ```
 
-2. Start the app
-
+2. **Change directory to the project folder**:
    ```bash
-    npx expo start
+   cd mobile-app
    ```
 
-In the output, you'll find options to open the app in a
+3. **Install dependencies**:
+   ```bash
+   yarn
+   ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+3. **Install Expo CLI globally** (if you haven't already):
+   ```bash
+   npm install -g expo-cli
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Running the Application
 
-## Get a fresh project
 
-When you're ready, run:
+1. **Clone the repository**:
+   ```bash
+   yarn start
+   ```
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+2. **Run on your device**:
+    - **Using Expo Go:**
+      - Download the Expo Go app from the Google Play Store or Apple App Store.
+      - Scan the QR code generated in your terminal with the Expo Go app.
+    - **Using an Android/iOS Emulator:**
+      - Make sure you have an Android or iOS emulator installed and running.
+      - Press a (for Android) or i (for iOS) in your terminal to open the app in the emulator.

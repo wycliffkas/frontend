@@ -5,13 +5,14 @@ import {
   StyleSheet,
   ViewStyle,
   TextStyle,
-  View
+  View,
+  TouchableOpacityProps
 } from "react-native";
 
-import colors from "../styles/colors";
+import colors from "../constants/colors";
 
-interface ButtonProps {
-  title: string;
+interface ButtonProps extends TouchableOpacityProps {
+  label: string;
   onPress: () => void;
   buttonStyle?: ViewStyle;
   textStyle?: TextStyle;
@@ -20,12 +21,14 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({
-  title,
+  label,
   onPress,
   buttonStyle,
   textStyle,
   variant,
-  icon
+  icon,
+  disabled,
+  ...rest
 }) => {
   const isContained = variant === "contained";
 
@@ -36,15 +39,17 @@ const Button: React.FC<ButtonProps> = ({
         styles.button,
         isContained ? styles.contained : styles.outlined,
         buttonStyle
-      ]}>
-        <Text
-          style={[
-            isContained ? styles.containedText : styles.outlinedText,
-            textStyle
-          ]}>
-          {title}
-        </Text>
-      {icon && <View style={styles.icon}>{icon}</View>}
+      ]}
+      disabled={disabled}
+      {...rest}>
+      <Text
+        style={[
+          isContained ? styles.containedText : styles.outlinedText,
+          textStyle
+        ]}>
+        {label}
+      </Text>
+      {icon && <View testID="icon" style={styles.icon}>{icon}</View>}
     </TouchableOpacity>
   );
 };
@@ -58,7 +63,8 @@ const styles = StyleSheet.create({
   contained: {
     backgroundColor: colors.primary,
     paddingVertical: 12,
-    paddingHorizontal: 16
+    paddingHorizontal: 16,
+    height: 56
   },
   outlined: {
     display: "flex",
@@ -81,7 +87,7 @@ const styles = StyleSheet.create({
     textTransform: "uppercase"
   },
   icon: {
-    marginLeft: 8,
+    marginLeft: 8
   }
 });
 
